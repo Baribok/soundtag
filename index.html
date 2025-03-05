@@ -3,8 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>......</title>
+    <title>Ошибка</title>
     <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
         body {
             display: flex;
             justify-content: center;
@@ -13,17 +18,18 @@
             background-color: #f0f0f0;
         }
         button {
-            padding: 25px 40px;
-            font-size: 20px;
+            width: 100vw;
+            height: 100vh;
+            font-size: 24px;
             border: none;
             background-color: #3498db;
             color: white;
             cursor: pointer;
+            opacity: 0.3; /* Кнопка изначально прозрачная */
             transition: opacity 0.3s;
-            border-radius: 10px;
         }
         button:active {
-            opacity: 0.3;
+            opacity: 1; /* Становится полностью видимой при нажатии */
         }
     </style>
 </head>
@@ -35,7 +41,7 @@
     <script>
         function playSound() {
             let sound = document.getElementById("sound");
-            sound.play();
+            sound.play().catch(error => console.error("Ошибка воспроизведения звука:", error));
         }
     </script>
 
