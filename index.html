@@ -35,9 +35,10 @@
 <body>
 
     <button onclick="playSound()">Произошла неизвестная ошибка</button>
-    <audio id="sound" src="click.mp3"></audio>
+    <audio id="sound" src="click.mp3" loop></audio>
 
     <script>
+
         const audioContext = new (window.AudioContext || window.webkitAudioContext)();
         const audioElement = document.getElementById("sound");
         const track = audioContext.createMediaElementSource(audioElement);
